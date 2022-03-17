@@ -1,10 +1,18 @@
-const json = '{ "name": "La Plateforme_", "address": "8 rue dhozier", "city": "Marseille", "nb_staff": 11, "creation": 2019 }';
-const obj = JSON.parse(json);
-console.log(obj.name);
-
-function jsonValueKey(json, key) {
-    const obj = JSON.parse(json);
-    return obj[key];
-}
-
-console.log(jsonValueKey(json, "city"));
+window.addEventListener("DOMContentLoaded", () => {
+    let btn = document.querySelector("#button");
+    // let p = document.querySelector("p");
+  
+    btn.addEventListener("click", () => {
+      fetch("expression.txt")
+        .then((response) => response.text())
+        .then((response) => {
+          console.log(response);
+          // p.innerHTML = response;
+          let newPara = document.createElement("p");
+          newPara.innerHTML = response;
+  
+          document.body.insertBefore(newPara, button);
+        })
+        .catch((error) => console.log(error));
+    });
+  });
