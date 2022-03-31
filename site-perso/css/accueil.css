@@ -1,0 +1,270 @@
+*, html, body {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+}
+body {
+    background-color: #77B5FE;
+}
+
+a {
+    color: #090A28;
+}
+
+/* header */
+
+.header {
+    color: #548c8c;
+    background-color: #548c8c;
+    box-shadow: 1px 1px 4px 0 rgba(0,0,0,.1);
+    position: fixed;
+    width: 100%;
+    z-index: 3;
+    letter-spacing: 0.3em;
+    font-weight: bold;
+}
+
+.header ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    overflow: hidden;
+    color: #548c8c;
+    background-color: #548c8c;
+    text-transform: uppercase;
+}
+
+.header li a {
+    display: block;
+    padding: 20px 20px;
+    text-decoration: none;
+    transition: 0.5s;
+}
+
+.header li a:hover,
+.header .menu-btn:hover {
+    background-color: #f4f4f4;
+    color: #C29CC5;
+}
+
+.header .logo {
+    display: block;
+    float: left;
+    font-size: 2em;
+    padding: 10px 20px;
+    text-decoration: none;
+}
+
+/* menu */
+
+.header .menu {
+    clear: both;
+    max-height: 0;
+    transition: max-height .2s ease-out;
+}
+
+/* menu icon */
+
+.header .menu-icon {
+    cursor: pointer;
+    display: inline-block;
+    padding: 28px 20px;
+    position: relative;
+    user-select: none;
+}
+
+.header .menu-icon .navicon {
+    background: #333;
+    display: block;
+    height: 2px;
+    position: relative;
+    transition: background .2s ease-out;
+    width: 18px;
+}
+
+.header .menu-icon .navicon:before,
+.header .menu-icon .navicon:after {
+    background: #333;
+    content: '';
+    display: block;
+    height: 100%;
+    position: absolute;
+    transition: all .2s ease-out;
+    width: 100%;
+}
+
+.header .menu-icon .navicon:before {
+    top: 5px;
+}
+
+.header .menu-icon .navicon:after {
+    top: -5px;
+}
+
+/* menu btn */
+
+.header .menu-btn {
+    display: none;
+}
+
+.header .menu-btn:checked ~ .menu {
+    max-height: 240px;
+}
+
+.header .menu-btn:checked ~ .menu-icon .navicon {
+    background: transparent;
+}
+
+.header .menu-btn:checked ~ .menu-icon .navicon:before {
+    transform: rotate(-45deg);
+}
+
+.header .menu-btn:checked ~ .menu-icon .navicon:after {
+    transform: rotate(45deg);
+}
+
+.header .menu-btn:checked ~ .menu-icon:not(.steps) .navicon:before,
+.header .menu-btn:checked ~ .menu-icon:not(.steps) .navicon:after {
+    top: 0;
+}
+
+/* 48em = 768px */
+
+@media (min-width: 48em) {
+    .header li {
+        float: left;
+    }
+    .header li a {
+        padding: 20px 30px;
+    }
+    .header .menu {
+        clear: none;
+        float: right;
+        max-height: none;
+    }
+    .header .menu-icon {
+        display: none;
+    }
+}
+
+/*****M A I N******/
+main {
+    margin-top: 5%;
+    max-width: 1200px;
+    margin: auto;
+}
+
+#intro {
+    background-color: rgba(65, 78, 131, 0.32);
+    color: white;
+    font-size: 30px;
+    height: fit-content;
+    width: fit-content;
+    padding: 3rem 3rem 3rem 4.5rem;
+    border-radius: 50px;
+    position: relative;
+    top: 6rem;
+}
+#intro a {
+    text-decoration: none;
+}
+
+#portfolio, #apropos, #contact {
+    text-transform: uppercase;
+    letter-spacing: 0.3em;
+    position: relative;
+    top: 6rem;
+    background-color: rgba(9, 10, 40, 0.53);
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+    color: #EAB0A4;
+    margin-top: 10rem;
+}
+
+#portfolio #projets {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    max-width: 1000px;
+    margin: auto;
+    letter-spacing: normal;
+    text-transform: none;
+    align-items: baseline;
+}
+#portfolio #projets .projet{
+    text-align: -webkit-center;
+}
+#projets>* {
+    flex: 1 1 300px;
+}
+
+#portfolio #projets .projet img {
+    width: 200px;
+    margin-top: 15px;
+}
+#portfolio #projets .projet p {
+    width: 200px;
+}
+
+/*qui suis je ?*/
+#apropos #competences, #apropos #moi, #contact p {
+    max-width: 1000px;
+    margin: auto;
+    letter-spacing: normal;
+    text-transform: none;
+}
+#moi a {
+    color: #EAB0A4;
+    transition: 0.5s;
+}
+#moi a:hover {
+    color: #f4f4f4;
+}
+#moi b {
+    color: #f4f4f4;
+}
+#apropos #competences #skillsimg {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+#apropos #competences #skillsimg img {
+    height: 100px;
+    padding: 10px;
+}
+
+#contact p a {
+    color: #EAB0A4;
+    transition: 0.5s;
+}
+#contact p a:hover {
+    color: #f4f4f4;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
